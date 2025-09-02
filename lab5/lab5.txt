@@ -1,0 +1,306 @@
+fum@IVANCOM-FC4Q91U:~$ sudo adduser user1
+[sudo] password for fum:
+info: Adding user `user1' ...
+info: Selecting UID/GID from range 1000 to 59999 ...
+info: Adding new group `user1' (1004) ...
+info: Adding new user `user1' (1004) with group `user1 (1004)' ...
+info: Creating home directory `/home/user1' ...
+info: Copying files from `/etc/skel' ...
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for user1
+Enter the new value, or press ENTER for the default
+        Full Name []:
+        Room Number []:
+        Work Phone []:
+        Home Phone []:
+        Other []:
+Is the information correct? [Y/n] Y
+info: Adding new user `user1' to supplemental / extra groups `users' ...
+info: Adding user `user1' to group `users' ...
+fum@IVANCOM-FC4Q91U:~$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+_apt:x:42:65534::/nonexistent:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:998:998:systemd Network Management:/:/usr/sbin/nologin
+systemd-timesync:x:996:996:systemd Time Synchronization:/:/usr/sbin/nologin
+dhcpcd:x:100:65534:DHCP Client Daemon,,,:/usr/lib/dhcpcd:/bin/false
+messagebus:x:101:101::/nonexistent:/usr/sbin/nologin
+syslog:x:102:102::/nonexistent:/usr/sbin/nologin
+systemd-resolve:x:991:991:systemd Resolver:/:/usr/sbin/nologin
+uuidd:x:103:103::/run/uuidd:/usr/sbin/nologin
+landscape:x:104:105::/var/lib/landscape:/usr/sbin/nologin
+polkitd:x:990:990:User for polkitd:/:/usr/sbin/nologin
+_rspamd:x:105:108:rspamd spam filtering system,,,:/var/lib/rspamd:/usr/sbin/nologin
+redis:x:106:109::/var/lib/redis:/usr/sbin/nologin
+fum:x:1000:1000:,,,:/home/fum:/bin/bash
+postgres:x:107:111:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
+alex:x:1003:1003:,,,:/home/alex:/bin/bash
+user1:x:1004:1004:,,,:/home/user1:/bin/bash
+fum@IVANCOM-FC4Q91U:~$ su - user1
+Password:
+Welcome to Ubuntu 24.04.2 LTS (GNU/Linux 6.6.87.2-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Tue Sep  2 12:58:30 +05 2025
+
+  System load:  0.0                 Processes:             55
+  Usage of /:   4.1% of 1006.85GB   Users logged in:       1
+  Memory usage: 5%                  IPv4 address for eth0: 172.23.195.156
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+This message is shown once a day. To disable it please create the
+/home/user1/.hushlogin file.
+user1@IVANCOM-FC4Q91U:~$ whoami
+user1
+user1@IVANCOM-FC4Q91U:~$ chfn
+Password:
+Changing the user information for user1
+Enter the new value, or press ENTER for the default
+        Full Name:
+        Room Number []: 1
+        Work Phone []: 1
+        Home Phone []: 1
+user1@IVANCOM-FC4Q91U:~$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+_apt:x:42:65534::/nonexistent:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:998:998:systemd Network Management:/:/usr/sbin/nologin
+systemd-timesync:x:996:996:systemd Time Synchronization:/:/usr/sbin/nologin
+dhcpcd:x:100:65534:DHCP Client Daemon,,,:/usr/lib/dhcpcd:/bin/false
+messagebus:x:101:101::/nonexistent:/usr/sbin/nologin
+syslog:x:102:102::/nonexistent:/usr/sbin/nologin
+systemd-resolve:x:991:991:systemd Resolver:/:/usr/sbin/nologin
+uuidd:x:103:103::/run/uuidd:/usr/sbin/nologin
+landscape:x:104:105::/var/lib/landscape:/usr/sbin/nologin
+polkitd:x:990:990:User for polkitd:/:/usr/sbin/nologin
+_rspamd:x:105:108:rspamd spam filtering system,,,:/var/lib/rspamd:/usr/sbin/nologin
+redis:x:106:109::/var/lib/redis:/usr/sbin/nologin
+fum:x:1000:1000:,,,:/home/fum:/bin/bash
+postgres:x:107:111:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
+alex:x:1003:1003:,,,:/home/alex:/bin/bash
+user1:x:1004:1004:,1,1,1:/home/user1:/bin/bash
+user1@IVANCOM-FC4Q91U:~$ pkill -KILL -u user1
+Killed
+fum@IVANCOM-FC4Q91U:~$ sudo deluser --remove-home user1
+info: Looking for files to backup/remove ...
+info: Removing files ...
+info: Removing crontab ...
+info: Removing user `user1' ...
+fum@IVANCOM-FC4Q91U:~$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+_apt:x:42:65534::/nonexistent:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:998:998:systemd Network Management:/:/usr/sbin/nologin
+systemd-timesync:x:996:996:systemd Time Synchronization:/:/usr/sbin/nologin
+dhcpcd:x:100:65534:DHCP Client Daemon,,,:/usr/lib/dhcpcd:/bin/false
+messagebus:x:101:101::/nonexistent:/usr/sbin/nologin
+syslog:x:102:102::/nonexistent:/usr/sbin/nologin
+systemd-resolve:x:991:991:systemd Resolver:/:/usr/sbin/nologin
+uuidd:x:103:103::/run/uuidd:/usr/sbin/nologin
+landscape:x:104:105::/var/lib/landscape:/usr/sbin/nologin
+polkitd:x:990:990:User for polkitd:/:/usr/sbin/nologin
+_rspamd:x:105:108:rspamd spam filtering system,,,:/var/lib/rspamd:/usr/sbin/nologin
+redis:x:106:109::/var/lib/redis:/usr/sbin/nologin
+fum:x:1000:1000:,,,:/home/fum:/bin/bash
+postgres:x:107:111:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
+alex:x:1003:1003:,,,:/home/alex:/bin/bash
+fum@IVANCOM-FC4Q91U:~$ sudo deluser --remove-home alex
+info: Looking for files to backup/remove ...
+info: Removing files ...
+info: Removing crontab ...
+info: Removing user `alex' ...
+fum@IVANCOM-FC4Q91U:~$ id
+uid=1000(fum) gid=1000(fum) groups=1000(fum),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),100(users),1001(docker)
+fum@IVANCOM-FC4Q91U:~$ groups
+fum adm cdrom sudo dip plugdev users docker
+fum@IVANCOM-FC4Q91U:~$ sudo groups
+root
+fum@IVANCOM-FC4Q91U:~$ getent group | cut -d: -f1 | sort
+_rspamd
+_ssh
+adm
+admin
+audio
+backup
+bin
+cdrom
+crontab
+daemon
+dialout
+dip
+disk
+docker
+fax
+floppy
+fum
+games
+input
+irc
+kmem
+kvm
+landscape
+list
+lp
+mail
+man
+messagebus
+netdev
+news
+nogroup
+operator
+plugdev
+polkitd
+postgres
+projectx
+proxy
+redis
+render
+root
+sasl
+sgx
+shadow
+src
+ssl-cert
+staff
+sudo
+sys
+syslog
+systemd-journal
+systemd-network
+systemd-resolve
+systemd-timesync
+tape
+tty
+users
+utmp
+uucp
+uuidd
+video
+voice
+www-data
+fum@IVANCOM-FC4Q91U:~$ sudo addgroup projecty
+info: Selecting GID from range 1000 to 59999 ...
+info: Adding group `projecty' (GID 1003) ...
+fum@IVANCOM-FC4Q91U:~$ sudo adduser alex
+info: Adding user `alex' ...
+info: Selecting UID/GID from range 1000 to 59999 ...
+info: Adding new group `alex' (1004) ...
+info: Adding new user `alex' (1004) with group `alex (1004)' ...
+info: Creating home directory `/home/alex' ...
+info: Copying files from `/etc/skel' ...
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for alex
+Enter the new value, or press ENTER for the default
+        Full Name []:
+        Room Number []:
+        Work Phone []:
+        Home Phone []:
+        Other []:
+Is the information correct? [Y/n] Y
+info: Adding new user `alex' to supplemental / extra groups `users' ...
+info: Adding user `alex' to group `users' ...
+fum@IVANCOM-FC4Q91U:~$ sudo adduser alex projecty
+info: Adding user `alex' to group `projecty' ...
+fum@IVANCOM-FC4Q91U:~$ id alex
+uid=1004(alex) gid=1004(alex) groups=1004(alex),100(users),1003(projecty)
+fum@IVANCOM-FC4Q91U:~$ groups alex
+alex : alex users projecty
+fum@IVANCOM-FC4Q91U:~$ getent group projectx
+projectx:x:1002:
+fum@IVANCOM-FC4Q91U:~$ su - alex
+Password:
+Welcome to Ubuntu 24.04.2 LTS (GNU/Linux 6.6.87.2-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Tue Sep  2 13:00:10 +05 2025
+
+  System load:  0.0                 Processes:             55
+  Usage of /:   4.1% of 1006.85GB   Users logged in:       1
+  Memory usage: 5%                  IPv4 address for eth0: 172.23.195.156
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+This message is shown once a day. To disable it please create the
+/home/alex/.hushlogin file.
+alex@IVANCOM-FC4Q91U:~$ groups
+alex users projecty
+alex@IVANCOM-FC4Q91U:~$ whoami
+alex
+alex@IVANCOM-FC4Q91U:~$ pkill -KILL -u alex
+Killed
+fum@IVANCOM-FC4Q91U:~$ sudo deluser alex projecty
+info: Removing user `alex' from group `projecty' ...
+fum@IVANCOM-FC4Q91U:~$ sudo deluser --remove-home alex
+info: Looking for files to backup/remove ...
+info: Removing files ...
+info: Removing crontab ...
+info: Removing user `alex' ...
+fum@IVANCOM-FC4Q91U:~$ sudo delgroup projectx
+info: Removing group `projectx' ...
+fum@IVANCOM-FC4Q91U:~$ sudo delgroup projecty
+info: Removing group `projecty' ...
+fum@IVANCOM-FC4Q91U:~$
