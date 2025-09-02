@@ -1,0 +1,64 @@
+fum@IVANCOM-FC4Q91U:~$ nano toy_shell.py
+fum@IVANCOM-FC4Q91U:~$ chmod +x toy_shell.py
+fum@IVANCOM-FC4Q91U:~$ sudo chown root:root toy_shell.py
+fum@IVANCOM-FC4Q91U:~$ sudo mv toy_shell.py /usr/loca/bin/
+mv: cannot move 'toy_shell.py' to '/usr/loca/bin/': No such file or directory
+fum@IVANCOM-FC4Q91U:~$ sudo mv toy_shell.py /usr/local/bin/
+fum@IVANCOM-FC4Q91U:~$ ls /usr/local/bin/
+kubectl  system_info  toy_shell.py
+fum@IVANCOM-FC4Q91U:~$ sudo apt install python3
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+python3 is already the newest version (3.12.3-0ubuntu2).
+python3 set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 55 not upgraded.
+fum@IVANCOM-FC4Q91U:~$ toy_shell.py
+Toy Shell: list files and folders older than a given date
+Enter a date in the format YYYY-MM-DD or type 'exit' to quit.
+toy-shell> 2025-09-02
+.aws (Folder, Created: 2025-08-23 00:12:23)
+.azure (Folder, Created: 2025-08-23 00:12:23)
+.bash_history (File, Created: 2025-09-01 19:57:30)
+.cursor (Folder, Created: 2025-08-23 12:37:59)
+.wget-hsts (File, Created: 2025-08-31 14:20:42)
+.docker (Folder, Created: 2025-07-13 13:41:33)
+.local (Folder, Created: 2025-07-19 16:13:55)
+.config (Folder, Created: 2025-06-11 15:09:04)
+.rustup (Folder, Created: 2025-06-24 15:57:49)
+.profile (File, Created: 2025-06-24 15:57:34)
+.ssh (Folder, Created: 2025-06-24 15:43:02)
+.cursor-server (Folder, Created: 2025-06-24 15:45:46)
+.bash_logout (File, Created: 2025-06-11 15:08:25)
+.lesshst (File, Created: 2025-09-01 14:45:02)
+.gitconfig (File, Created: 2025-06-24 15:40:08)
+rspamd-telegram-bot (Folder, Created: 2025-08-31 14:40:41)
+.redis-for-vscode (Folder, Created: 2025-07-19 16:28:01)
+.bashrc (File, Created: 2025-06-24 15:57:34)
+toy-shell> ^C
+Use 'exit' to quit the shell.
+toy-shell> exit
+Exiting toy shell.
+fum@IVANCOM-FC4Q91U:~$ sudo nano /usr/local/bin/toy_shell.py
+fum@IVANCOM-FC4Q91U:~$ toy_shell.py
+Toy Shell: date-based listing and SHA-256 hashing
+Type 'help' for commands. Enter a date (YYYY-MM-DD) or 'hash <file>' or 'exit'.
+toy-shell> help
+Toy Shell commands:
+  YYYY-MM-DD        List files/folders in current dir created before this date.
+  hash <file>       Compute SHA-256 of <file>.
+  help              Show this message.
+  exit              Quit.
+
+toy-shell> exit
+Exiting toy shell.
+fum@IVANCOM-FC4Q91U:~$ ls
+cout_word.sh     delete_empty_files.sh  greet.sh             suid_scan.sh
+current_time.sh  file.txt               rspamd-telegram-bot  world_writable.sh
+fum@IVANCOM-FC4Q91U:~$ toy_shell.py
+Toy Shell: date-based listing and SHA-256 hashing
+Type 'help' for commands. Enter a date (YYYY-MM-DD) or 'hash <file>' or 'exit'.
+toy-shell> hash file.txt
+SHA-256(file.txt) = bf2c4d26e4322505a1f2018d0112d924c390beea8cb79599df0d2666520855e0
+toy-shell> exit
+Exiting toy shell.
