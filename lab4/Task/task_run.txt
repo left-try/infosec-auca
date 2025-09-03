@@ -1,0 +1,4 @@
+fum@IVANCOM-FC4Q91U:~/phishing-card$ ls
+app.py  logs  send_invites.py  templates
+fum@IVANCOM-FC4Q91U:~/phishing-card$ python3 send_invites.py
+Invite sent.

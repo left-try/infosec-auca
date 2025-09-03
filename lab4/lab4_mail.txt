@@ -1,0 +1,13 @@
+fum@IVANCOM-FC4Q91U:~$ nano mail.py
+fum@IVANCOM-FC4Q91U:~$ nano mail.py
+fum@IVANCOM-FC4Q91U:~$ ls
+cout_word.sh     delete_empty_files.sh  file.txt  login_data.txt  phishing             server.py     world_writable.sh
+current_time.sh  fake_login.html        greet.sh  mail.py         rspamd-telegram-bot  suid_scan.sh
+fum@IVANCOM-FC4Q91U:~$ nano mail.py
+fum@IVANCOM-FC4Q91U:~$ nano mail.py
+fum@IVANCOM-FC4Q91U:~$ nano mail.py
+fum@IVANCOM-FC4Q91U:~$ nano mail.py
+fum@IVANCOM-FC4Q91U:~$ python3 mail.py
+Email sent successfully!
+fum@IVANCOM-FC4Q91U:~$ nano mail.py
+fum@IVANCOM-FC4Q91U:~$

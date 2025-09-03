@@ -1,0 +1,273 @@
+fum@IVANCOM-FC4Q91U:~$ mkdir phishing
+fum@IVANCOM-FC4Q91U:~$ nano fake_login.html
+fum@IVANCOM-FC4Q91U:~$ pip install Flask
+Command 'pip' not found, but can be installed with:
+sudo apt install python3-pip
+fum@IVANCOM-FC4Q91U:~$ sudo apt install python3-pip
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libexpat1-dev libjs-jquery libjs-sphinxdoc libjs-underscore libpython3-dev libpython3.12-dev python3-dev
+  python3-wheel python3.12-dev zlib1g-dev
+The following NEW packages will be installed:
+  libexpat1-dev libjs-jquery libjs-sphinxdoc libjs-underscore libpython3-dev libpython3.12-dev python3-dev python3-pip
+  python3-wheel python3.12-dev zlib1g-dev
+0 upgraded, 11 newly installed, 0 to remove and 55 not upgraded.
+Need to get 9211 kB of archives.
+After this operation, 41.2 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libexpat1-dev amd64 2.6.1-2ubuntu0.3 [140 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble/main amd64 libjs-jquery all 3.6.1+dfsg+~3.5.14-1 [328 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble/main amd64 libjs-underscore all 1.13.4~dfsg+~1.11.4-3 [118 kB]
+Get:4 http://archive.ubuntu.com/ubuntu noble/main amd64 libjs-sphinxdoc all 7.2.6-6 [149 kB]
+Get:5 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 zlib1g-dev amd64 1:1.3.dfsg-3.1ubuntu2.1 [894 kB]
+Get:6 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libpython3.12-dev amd64 3.12.3-1ubuntu0.8 [5677 kB]
+Get:7 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libpython3-dev amd64 3.12.3-0ubuntu2 [10.3 kB]
+Get:8 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 python3.12-dev amd64 3.12.3-1ubuntu0.8 [498 kB]
+Get:9 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 python3-dev amd64 3.12.3-0ubuntu2 [26.7 kB]
+Get:10 http://archive.ubuntu.com/ubuntu noble/universe amd64 python3-wheel all 0.42.0-2 [53.1 kB]
+Get:11 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 python3-pip all 24.0+dfsg-1ubuntu1.2 [1317 kB]
+Fetched 9211 kB in 1s (7205 kB/s)
+Selecting previously unselected package libexpat1-dev:amd64.
+(Reading database ... 83322 files and directories currently installed.)
+Preparing to unpack .../00-libexpat1-dev_2.6.1-2ubuntu0.3_amd64.deb ...
+Unpacking libexpat1-dev:amd64 (2.6.1-2ubuntu0.3) ...
+Selecting previously unselected package libjs-jquery.
+Preparing to unpack .../01-libjs-jquery_3.6.1+dfsg+~3.5.14-1_all.deb ...
+Unpacking libjs-jquery (3.6.1+dfsg+~3.5.14-1) ...
+Selecting previously unselected package libjs-underscore.
+Preparing to unpack .../02-libjs-underscore_1.13.4~dfsg+~1.11.4-3_all.deb ...
+Unpacking libjs-underscore (1.13.4~dfsg+~1.11.4-3) ...
+Selecting previously unselected package libjs-sphinxdoc.
+Preparing to unpack .../03-libjs-sphinxdoc_7.2.6-6_all.deb ...
+Unpacking libjs-sphinxdoc (7.2.6-6) ...
+Selecting previously unselected package zlib1g-dev:amd64.
+Preparing to unpack .../04-zlib1g-dev_1%3a1.3.dfsg-3.1ubuntu2.1_amd64.deb ...
+Unpacking zlib1g-dev:amd64 (1:1.3.dfsg-3.1ubuntu2.1) ...
+Selecting previously unselected package libpython3.12-dev:amd64.
+Preparing to unpack .../05-libpython3.12-dev_3.12.3-1ubuntu0.8_amd64.deb ...
+Unpacking libpython3.12-dev:amd64 (3.12.3-1ubuntu0.8) ...
+Selecting previously unselected package libpython3-dev:amd64.
+Preparing to unpack .../06-libpython3-dev_3.12.3-0ubuntu2_amd64.deb ...
+Unpacking libpython3-dev:amd64 (3.12.3-0ubuntu2) ...
+Selecting previously unselected package python3.12-dev.
+Preparing to unpack .../07-python3.12-dev_3.12.3-1ubuntu0.8_amd64.deb ...
+Unpacking python3.12-dev (3.12.3-1ubuntu0.8) ...
+Selecting previously unselected package python3-dev.
+Preparing to unpack .../08-python3-dev_3.12.3-0ubuntu2_amd64.deb ...
+Unpacking python3-dev (3.12.3-0ubuntu2) ...
+Selecting previously unselected package python3-wheel.
+Preparing to unpack .../09-python3-wheel_0.42.0-2_all.deb ...
+Unpacking python3-wheel (0.42.0-2) ...
+Selecting previously unselected package python3-pip.
+Preparing to unpack .../10-python3-pip_24.0+dfsg-1ubuntu1.2_all.deb ...
+Unpacking python3-pip (24.0+dfsg-1ubuntu1.2) ...
+Setting up python3-wheel (0.42.0-2) ...
+Setting up libexpat1-dev:amd64 (2.6.1-2ubuntu0.3) ...
+Setting up python3-pip (24.0+dfsg-1ubuntu1.2) ...
+Setting up zlib1g-dev:amd64 (1:1.3.dfsg-3.1ubuntu2.1) ...
+Setting up libjs-jquery (3.6.1+dfsg+~3.5.14-1) ...
+Setting up libjs-underscore (1.13.4~dfsg+~1.11.4-3) ...
+Setting up libpython3.12-dev:amd64 (3.12.3-1ubuntu0.8) ...
+Setting up python3.12-dev (3.12.3-1ubuntu0.8) ...
+Setting up libjs-sphinxdoc (7.2.6-6) ...
+Setting up libpython3-dev:amd64 (3.12.3-0ubuntu2) ...
+Setting up python3-dev (3.12.3-0ubuntu2) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+fum@IVANCOM-FC4Q91U:~$ pip install Flask
+error: externally-managed-environment
+
+× This environment is externally managed
+╰─> To install Python packages system-wide, try apt install
+    python3-xyz, where xyz is the package you are trying to
+    install.
+
+    If you wish to install a non-Debian-packaged Python package,
+    create a virtual environment using python3 -m venv path/to/venv.
+    Then use path/to/venv/bin/python and path/to/venv/bin/pip. Make
+    sure you have python3-full installed.
+
+    If you wish to install a non-Debian packaged Python application,
+    it may be easiest to use pipx install xyz, which will manage a
+    virtual environment for you. Make sure you have pipx installed.
+
+    See /usr/share/doc/python3.12/README.venv for more information.
+
+note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+hint: See PEP 668 for the detailed specification.
+fum@IVANCOM-FC4Q91U:~$ pip install flask
+error: externally-managed-environment
+
+× This environment is externally managed
+╰─> To install Python packages system-wide, try apt install
+    python3-xyz, where xyz is the package you are trying to
+    install.
+
+    If you wish to install a non-Debian-packaged Python package,
+    create a virtual environment using python3 -m venv path/to/venv.
+    Then use path/to/venv/bin/python and path/to/venv/bin/pip. Make
+    sure you have python3-full installed.
+
+    If you wish to install a non-Debian packaged Python application,
+    it may be easiest to use pipx install xyz, which will manage a
+    virtual environment for you. Make sure you have pipx installed.
+
+    See /usr/share/doc/python3.12/README.venv for more information.
+
+note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+hint: See PEP 668 for the detailed specification.
+fum@IVANCOM-FC4Q91U:~$ apt install python3-Flask
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (13: Permission denied)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+fum@IVANCOM-FC4Q91U:~$ apt install python3-flask
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (13: Permission denied)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+fum@IVANCOM-FC4Q91U:~$ sudo apt install python3-flask
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  python3-asgiref python3-itsdangerous python3-pyasyncore python3-pyinotify python3-simplejson python3-werkzeug
+Suggested packages:
+  python3-dotenv python-flask-doc python-pyinotify-doc ipython3 python-werkzeug-doc python3-lxml python3-watchdog
+The following NEW packages will be installed:
+  python3-asgiref python3-flask python3-itsdangerous python3-pyasyncore python3-pyinotify python3-simplejson
+  python3-werkzeug
+0 upgraded, 7 newly installed, 0 to remove and 55 not upgraded.
+Need to get 382 kB of archives.
+After this operation, 1882 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 python3-asgiref all 3.7.2-1 [24.8 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble/main amd64 python3-itsdangerous all 2.1.2-4 [14.6 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 python3-werkzeug all 3.0.1-3ubuntu0.2 [170 kB]
+Get:4 http://archive.ubuntu.com/ubuntu noble/main amd64 python3-flask all 3.0.2-1ubuntu1 [82.9 kB]
+Get:5 http://archive.ubuntu.com/ubuntu noble/main amd64 python3-pyasyncore all 1.0.2-2 [10.1 kB]
+Get:6 http://archive.ubuntu.com/ubuntu noble/main amd64 python3-pyinotify all 0.9.6-2ubuntu1 [25.0 kB]
+Get:7 http://archive.ubuntu.com/ubuntu noble/main amd64 python3-simplejson amd64 3.19.2-1build2 [54.5 kB]
+Fetched 382 kB in 1s (296 kB/s)
+Selecting previously unselected package python3-asgiref.
+(Reading database ... 84421 files and directories currently installed.)
+Preparing to unpack .../0-python3-asgiref_3.7.2-1_all.deb ...
+Unpacking python3-asgiref (3.7.2-1) ...
+Selecting previously unselected package python3-itsdangerous.
+Preparing to unpack .../1-python3-itsdangerous_2.1.2-4_all.deb ...
+Unpacking python3-itsdangerous (2.1.2-4) ...
+Selecting previously unselected package python3-werkzeug.
+Preparing to unpack .../2-python3-werkzeug_3.0.1-3ubuntu0.2_all.deb ...
+Unpacking python3-werkzeug (3.0.1-3ubuntu0.2) ...
+Selecting previously unselected package python3-flask.
+Preparing to unpack .../3-python3-flask_3.0.2-1ubuntu1_all.deb ...
+Unpacking python3-flask (3.0.2-1ubuntu1) ...
+Selecting previously unselected package python3-pyasyncore.
+Preparing to unpack .../4-python3-pyasyncore_1.0.2-2_all.deb ...
+Unpacking python3-pyasyncore (1.0.2-2) ...
+Selecting previously unselected package python3-pyinotify.
+Preparing to unpack .../5-python3-pyinotify_0.9.6-2ubuntu1_all.deb ...
+Unpacking python3-pyinotify (0.9.6-2ubuntu1) ...
+Selecting previously unselected package python3-simplejson.
+Preparing to unpack .../6-python3-simplejson_3.19.2-1build2_amd64.deb ...
+Unpacking python3-simplejson (3.19.2-1build2) ...
+Setting up python3-itsdangerous (2.1.2-4) ...
+Setting up python3-simplejson (3.19.2-1build2) ...
+Setting up python3-werkzeug (3.0.1-3ubuntu0.2) ...
+Setting up python3-pyasyncore (1.0.2-2) ...
+Setting up python3-asgiref (3.7.2-1) ...
+Setting up python3-flask (3.0.2-1ubuntu1) ...
+Setting up python3-pyinotify (0.9.6-2ubuntu1) ...
+fum@IVANCOM-FC4Q91U:~$ nano server.py
+fum@IVANCOM-FC4Q91U:~$ python server.py
+Command 'python' not found, did you mean:
+  command 'python3' from deb python3
+  command 'python' from deb python-is-python3
+fum@IVANCOM-FC4Q91U:~$ python3 server.py
+Traceback (most recent call last):
+  File "/home/fum/server.py", line 2, in <module>
+    from flask_cors import CORS
+ModuleNotFoundError: No module named 'flask_cors'
+fum@IVANCOM-FC4Q91U:~$ sudo apt install python3-flask_cors
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package python3-flask_cors
+fum@IVANCOM-FC4Q91U:~$ sudo apt install python3-flask-cors
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  fonts-font-awesome fonts-lato sphinx-rtd-theme-common
+The following NEW packages will be installed:
+  fonts-font-awesome fonts-lato python3-flask-cors sphinx-rtd-theme-common
+0 upgraded, 4 newly installed, 0 to remove and 55 not upgraded.
+Need to get 4350 kB of archives.
+After this operation, 14.7 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 fonts-lato all 2.015-1 [2781 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble/main amd64 fonts-font-awesome all 5.0.10+really4.7.0~dfsg-4.1 [516 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble/main amd64 sphinx-rtd-theme-common all 2.0.0+dfsg-1 [1012 kB]
+Get:4 http://archive.ubuntu.com/ubuntu noble/universe amd64 python3-flask-cors all 4.0.0-1 [41.9 kB]
+Fetched 4350 kB in 1s (3074 kB/s)
+Selecting previously unselected package fonts-lato.
+(Reading database ... 84678 files and directories currently installed.)
+Preparing to unpack .../fonts-lato_2.015-1_all.deb ...
+Unpacking fonts-lato (2.015-1) ...
+Selecting previously unselected package fonts-font-awesome.
+Preparing to unpack .../fonts-font-awesome_5.0.10+really4.7.0~dfsg-4.1_all.deb ...
+Unpacking fonts-font-awesome (5.0.10+really4.7.0~dfsg-4.1) ...
+Selecting previously unselected package sphinx-rtd-theme-common.
+Preparing to unpack .../sphinx-rtd-theme-common_2.0.0+dfsg-1_all.deb ...
+Unpacking sphinx-rtd-theme-common (2.0.0+dfsg-1) ...
+Selecting previously unselected package python3-flask-cors.
+Preparing to unpack .../python3-flask-cors_4.0.0-1_all.deb ...
+Unpacking python3-flask-cors (4.0.0-1) ...
+Setting up fonts-lato (2.015-1) ...
+Setting up fonts-font-awesome (5.0.10+really4.7.0~dfsg-4.1) ...
+Setting up sphinx-rtd-theme-common (2.0.0+dfsg-1) ...
+Setting up python3-flask-cors (4.0.0-1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for fontconfig (2.15.0-1.1ubuntu2) ...
+fum@IVANCOM-FC4Q91U:~$ python3 server.py
+ * Serving Flask app 'server'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:8000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-984-184
+127.0.0.1 - - [02/Sep/2025 10:08:36] "GET / HTTP/1.1" 404 -
+127.0.0.1 - - [02/Sep/2025 10:08:36] "GET /favicon.ico HTTP/1.1" 404 -
+^Cfum@IVANCOM-FC4Q91U:~nano server.py
+fum@IVANCOM-FC4Q91U:~$ python3 server.py
+ * Serving Flask app 'server'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:8000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-984-184
+ * Detected change in '/home/fum/mail.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-984-184
+ * Detected change in '/home/fum/mail.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-984-184
+ * Detected change in '/home/fum/mail.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-984-184
+ * Detected change in '/home/fum/mail.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-984-184
+ * Detected change in '/home/fum/mail.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-984-184
+ * Detected change in '/home/fum/mail.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-984-184

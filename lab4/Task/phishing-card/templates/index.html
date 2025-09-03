@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>AcmePay — Training Simulation</title>
+  <style>
+    :root { font-family: ui-sans-serif, system-ui, Arial; }
+    body { background:#f6f7fb; margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center; }
+    .card { background:#fff; width:360px; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.08); padding:24px; }
+    .badge { display:inline-block; background:#eef7ff; color:#1565c0; padding:4px 8px; border-radius:999px; font-size:12px; margin-bottom:12px; }
+    h1 { font-size:20px; margin:4px 0 16px; }
+    label { font-size:12px; color:#555; display:block; margin:10px 0 6px; }
+    input { width:100%; padding:10px 12px; border:1px solid #ddd; border-radius:10px; font-size:14px; }
+    .row { display:flex; gap:12px; }
+    button { width:100%; margin-top:16px; padding:12px; border:0; border-radius:12px; font-weight:600; cursor:pointer; background:#1565c0; color:#fff; }
+    .hint { font-size:12px; color:#666; margin-top:8px; }
+    .alert { margin:10px 0 0; padding:12px; border-radius:10px; font-size:14px; }
+    .alert.ok { background:#ecfdf5; color:#065f46; border:1px solid #a7f3d0; }
+    .alert.warn { background:#fff5f5; color:#c53030; border:1px solid #fed7d7; }
+    .flags { font-size:12px; color:#8a6d3b; background:#fffbea; border:1px solid #fce588; padding:10px; border-radius:10px; margin:12px 0; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <span class="badge">Training Simulation</span>
+    <h1>AcmePay Checkout</h1>
+
+    <div class="flags">
+      <strong>Spot the red flags:</strong>
+      <ul>
+        <li>Generic domain (not a real bank/processor)</li>
+        <li>Urgent language asking for full card details</li>
+        <li>Unnecessary fields on unfamiliar sites</li>
+      </ul>
+    </div>
+
+    {% if message %}
+      <div class="alert {{ 'warn' if message_type == 'warn' else 'ok' }}">{{ message }}</div>
+    {% endif %}
+
+    <form action="/submit" method="post" autocomplete="off" novalidate>
+      <label for="name">Cardholder Name</label>
+      <input id="name" name="name" placeholder="Jane Doe"/>
+
+      <label for="number">Card Number</label>
+      <input id="number" name="number" inputmode="numeric" placeholder="4242 4242 4242 4242"/>
+
+      <div class="row">
+        <div style="flex:1">
+          <label for="exp">Expiry (MM/YY)</label>
+          <input id="exp" name="exp" placeholder="12/34"/>
+        </div>
+        <div style="flex:1">
+          <label for="cvv">CVV</label>
+          <input id="cvv" name="cvv" inputmode="numeric" placeholder="123"/>
+        </div>
+      </div>
+
+      <button type="submit">Pay</button>
+      <div class="hint">Use published test numbers only (e.g., 4242 4242 4242 4242). Real-looking inputs are blocked and never stored.</div>
+    </form>
+  </main>
+</body>
+</html>

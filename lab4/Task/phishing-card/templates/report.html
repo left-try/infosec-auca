@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Training Report</title>
+  <style>
+    :root { font-family: ui-sans-serif, system-ui, Arial; }
+    body { margin:2rem; }
+    table { border-collapse: collapse; margin-top:1rem; }
+    td, th { border:1px solid #ddd; padding:.5rem .75rem; }
+  </style>
+</head>
+<body>
+  <h1>Training Report</h1>
+  <p>Aggregated, anonymous telemetry only.</p>
+  <table>
+    <tr><th>Total events</th><td>{{ counts.total }}</td></tr>
+    <tr><th>Submits (attempted)</th><td>{{ counts.submits }}</td></tr>
+    <tr><th>Blocked (real-like secrets)</th><td>{{ counts.blocked }}</td></tr>
+    <tr><th>Safe submissions (test data)</th><td>{{ counts.safe }}</td></tr>
+  </table>
+</body>
+</html>
