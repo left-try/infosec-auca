@@ -1,0 +1,69 @@
+fum@IVANCOM-FC4Q91U:~/infosec$ touch file.txt
+fum@IVANCOM-FC4Q91U:~/infosec$ ls -la
+total 8
+drwxr-xr-x  2 fum fum 4096 Oct  7 11:08 .
+drwxr-x--- 19 fum fum 4096 Oct  7 11:08 ..
+-rw-r--r--  1 fum fum    0 Oct  7 11:08 file.txt
+Try 'chmod --help' for more information.
+fum@IVANCOM-FC4Q91U:~/infosec$ chmod 754 file.txt
+fum@IVANCOM-FC4Q91U:~/infosec$ ls -la
+total 8
+drwxr-xr-x  2 fum fum 4096 Oct  7 11:08 .
+drwxr-x--- 19 fum fum 4096 Oct  7 11:08 ..
+-rwxr-xr--  1 fum fum    0 Oct  7 11:08 file.txt
+fum@IVANCOM-FC4Q91U:~/infosec$ sudo adduser alice
+info: Adding user `alice' ...
+info: Selecting UID/GID from range 1000 to 59999 ...
+info: Adding new group `alice' (1003) ...
+info: Adding new user `alice' (1003) with group `alice (1003)' ...
+info: Creating home directory `/home/alice' ...
+info: Copying files from `/etc/skel' ...
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for alice
+Enter the new value, or press ENTER for the default
+        Full Name []:
+        Room Number []:
+        Work Phone []:
+        Home Phone []:
+        Other []:
+Is the information correct? [Y/n] Y
+info: Adding new user `alice' to supplemental / extra groups `users' ...
+info: Adding user `alice' to group `users' ...
+fum@IVANCOM-FC4Q91U:~/infosec$ sudo chown alice file.txt
+fum@IVANCOM-FC4Q91U:~/infosec$ ls -l file.txt
+-rwxr-xr-- 1 alice fum 0 Oct  7 11:08 file.txt
+fum@IVANCOM-FC4Q91U:~/infosec$ sudo groupadd developers
+fum@IVANCOM-FC4Q91U:~/infosec$ sudo usermod -aG developers alice
+fum@IVANCOM-FC4Q91U:~/infosec$ sudo chgrp developers file.txt
+fum@IVANCOM-FC4Q91U:~/infosec$ ls -l file.txt
+-rwxr-xr-- 1 alice developers 0 Oct  7 11:08 file.txt
+fum@IVANCOM-FC4Q91U:~/infosec$ sudo adduser bob
+info: Adding user `bob' ...
+info: Selecting UID/GID from range 1000 to 59999 ...
+info: Adding new group `bob' (1005) ...
+info: Adding new user `bob' (1005) with group `bob (1005)' ...
+info: Creating home directory `/home/bob' ...
+info: Copying files from `/etc/skel' ...
+New password:
+Retype new password:
+No password has been supplied.
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for bob
+Enter the new value, or press ENTER for the default
+        Full Name []:
+        Room Number []:
+        Work Phone []:
+        Home Phone []:
+        Other []:
+Is the information correct? [Y/n] Y
+info: Adding new user `bob' to supplemental / extra groups `users' ...
+info: Adding user `bob' to group `users' ...
+fum@IVANCOM-FC4Q91U:~/infosec$ sudo groupadd clients
+fum@IVANCOM-FC4Q91U:~/infosec$ sudo usermod -aG clients bob
+fum@IVANCOM-FC4Q91U:~/infosec$ sudo chown bob:clients file.txt
+fum@IVANCOM-FC4Q91U:~/infosec$ ls -l file.txt
+-rwxr-xr-- 1 bob clients 0 Oct  7 11:08 file.txt

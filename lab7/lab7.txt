@@ -1,0 +1,38 @@
+fum@IVANCOM-FC4Q91U:~/infosec$ cd /home
+fum@IVANCOM-FC4Q91U:/home$ touch file.txt
+touch: cannot touch 'file.txt': Permission denied
+fum@IVANCOM-FC4Q91U:/home$ sudo touch file.txt
+fum@IVANCOM-FC4Q91U:/home$ sudo nano write_line.sh
+fum@IVANCOM-FC4Q91U:/home$ chmod +x /home/write_line.sh
+chmod: changing permissions of '/home/write_line.sh': Operation not permitted
+fum@IVANCOM-FC4Q91U:/home$ sudo chmod +x /home/write_line.sh
+fum@IVANCOM-FC4Q91U:/home$ sudo crontab -e
+no crontab for root - using an empty one
+
+Select an editor.  To change later, run 'select-editor'.
+  1. /bin/nano        <---- easiest
+  2. /usr/bin/vim.basic
+  3. /usr/bin/vim.tiny
+  4. /bin/ed
+
+Choose 1-4 [1]: ^C^Z
+[4]+  Stopped                 sudo crontab -e
+fum@IVANCOM-FC4Q91U:/home$ sudo crontab -e
+no crontab for root - using an empty one
+crontab: installing new crontab
+fum@IVANCOM-FC4Q91U:/home$ sudo cat /home/file.txt
+fum@IVANCOM-FC4Q91U:/home$ cat /home/file.txt
+New line at Tue Oct  7 11:26:02 +05 2025
+fum@IVANCOM-FC4Q91U:/home$ sudo nano /opt/cron/simple_report.py
+fum@IVANCOM-FC4Q91U:/home$ sudo chmod 755 /opt/cron/simple_report.py
+fum@IVANCOM-FC4Q91U:/home$ /usr/bin/python3 /opt/cron/simple_report.py
+fum@IVANCOM-FC4Q91U:/home$ sudo /usr/bin/python3 /opt/cron/simple_report.py
+fum@IVANCOM-FC4Q91U:/home$ sudo cat /var/log/simple_report.log
+2025-10-07 11:38:11 [IVANCOM-FC4Q91U] disk: used 41G / 1006G, free 913G; uptime: 24h 50m
+fum@IVANCOM-FC4Q91U:/home$ sudo chown fum:fum /var/log/simple_report.log
+fum@IVANCOM-FC4Q91U:/home$ sudo chmod 664 /var/log/simple_report.log
+fum@IVANCOM-FC4Q91U:/home$ crontab -e
+crontab: installing new crontab
+fum@IVANCOM-FC4Q91U:/home$ sudo cat /var/log/simple_report.log
+2025-10-07 11:38:11 [IVANCOM-FC4Q91U] disk: used 41G / 1006G, free 913G; uptime: 24h 50m
+2025-10-07 11:43:04 [IVANCOM-FC4Q91U] disk: used 41G / 1006G, free 913G; uptime: 24h 54m

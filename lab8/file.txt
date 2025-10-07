@@ -1,0 +1,49 @@
+VIM BASIC COMMANDS
+
+--- NORMAL / INSERT ---
+i – insert mode
+ESC – back to normal mode
+a – append after cursor
+o – open new line below
+O – open new line above
+A – go to end of line and insert
+
+--- SAVE & QUIT ---
+:w – save file
+:q – quit vim
+:wq – save and quit
+:q! – quit without saving
+
+--- EDIT ---
+u – undo
+Ctrl+r – redo
+x – delete one character
+dd – delete line
+yy – copy (yank) line
+p – paste
+r – replace one character
+. – repeat last change
+
+--- MOVE ---
+0 – beginning of line
+$ – end of line
+w – next word
+b – previous word
+gg – top of file
+G – bottom of file
+:n – jump to line n
+
+--- SEARCH & REPLACE ---
+/word – search word (n=next, N=previous)
+:%s/old/new/g – replace all
+:%s/old/new/gc – replace with confirm
+
+--- VISUAL ---
+v – visual mode (select text)
+V – visual line mode
+Ctrl+v – block selection
+
+--- OTHER ---
+:set number – show line numbers
+:!ls – run shell command
+:help – open help inside vim

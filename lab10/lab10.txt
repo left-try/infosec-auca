@@ -1,0 +1,54 @@
+fum@IVANCOM-FC4Q91U:~/infosec$ sudo apt install nginx
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libdrm-nouveau2 libdrm-radeon1 libgl1-amber-dri libglapi-mesa libllvm19 libxcb-dri2-0
+Use 'sudo apt autoremove' to remove them.
+The following NEW packages will be installed:
+  nginx
+0 upgraded, 1 newly installed, 0 to remove and 59 not upgraded.
+Need to get 520 kB of archives.
+After this operation, 1352 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 nginx amd64 1.24.0-2ubuntu7.5 [520 kB]
+Fetched 520 kB in 1s (439 kB/s)
+Selecting previously unselected package nginx.
+(Reading database ... 88717 files and directories currently installed.)
+Preparing to unpack .../nginx_1.24.0-2ubuntu7.5_amd64.deb ...
+Unpacking nginx (1.24.0-2ubuntu7.5) ...
+Setting up nginx (1.24.0-2ubuntu7.5) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+fum@IVANCOM-FC4Q91U:~/infosec$ sudo nano /etc/nginx/sites-available/my_site
+fum@IVANCOM-FC4Q91U:~/infosec$ nano /var/www/html/my_site.html
+fum@IVANCOM-FC4Q91U:~/infosec$ sudo nano /var/www/html/my_site.html
+fum@IVANCOM-FC4Q91U:~/infosec$ sudo ln -s /etc/nginx/sites-available/my_site /etc/nginx/sites-enabled/~
+fum@IVANCOM-FC4Q91U:~/infosec$ sudo nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+fum@IVANCOM-FC4Q91U:~/infosec$ sudo systemctl reload nginx
+fum@IVANCOM-FC4Q91U:~/infosec$ curl -i http://127.0.0.1:5000/health || curl -i http://127.0.0.1:5000/
+curl: (7) Failed to connect to 127.0.0.1 port 5000 after 0 ms: Couldn't connect to server
+curl: (7) Failed to connect to 127.0.0.1 port 5000 after 0 ms: Couldn't connect to server
+fum@IVANCOM-FC4Q91U:~/infosec$ sudo nano /etc/nginx/sites-available/my_api
+fum@IVANCOM-FC4Q91U:~/infosec$ sudo ln -s /etc/nginx/sites-available/my_api /etc/nginx/sites-enabled/
+fum@IVANCOM-FC4Q91U:~/infosec$ sudo nginx -t
+2025/10/07 12:08:26 [warn] 24810#24810: conflicting server name "localhost" on 0.0.0.0:8000, ignored
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+fum@IVANCOM-FC4Q91U:~/infosec$ sudo systemctl reload nginx
+fum@IVANCOM-FC4Q91U:~/infosec$ curl -i http://localhost:8000/api/
+HTTP/1.1 502 Bad Gateway
+Server: nginx/1.24.0 (Ubuntu)
+Date: Tue, 07 Oct 2025 07:08:33 GMT
+Content-Type: text/html
+Content-Length: 166
+Connection: keep-alive
+
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx/1.24.0 (Ubuntu)</center>
+</body>
+</html>
+fum@IVANCOM-FC4Q91U:~/infosec$

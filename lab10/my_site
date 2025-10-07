@@ -1,0 +1,10 @@
+server { 
+    listen 8000; 
+    server_name localhost; 
+    root /var/www/html; # Path to your HTML file where it is located
+    index my_site.html; # The default file to serve 
+
+    location / { 
+         try_files $uri $uri/ =404; 
+    } 
+}

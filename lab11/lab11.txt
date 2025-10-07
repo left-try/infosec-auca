@@ -1,0 +1,153 @@
+fum@IVANCOM-FC4Q91U:~/infosec$ sudo apt install -y git build-essential coreutils sed
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+git is already the newest version (1:2.43.0-1ubuntu7.3).
+build-essential is already the newest version (12.10ubuntu1).
+sed is already the newest version (4.9-2build1).
+sed set to manually installed.
+The following packages were automatically installed and are no longer required:
+  libdrm-nouveau2 libdrm-radeon1 libgl1-amber-dri libglapi-mesa libllvm19 libxcb-dri2-0
+Use 'sudo apt autoremove' to remove them.
+The following packages will be upgraded:
+  coreutils
+1 upgraded, 0 newly installed, 0 to remove and 58 not upgraded.
+Need to get 1413 kB of archives.
+After this operation, 0 B of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 coreutils amd64 9.4-3ubuntu6.1 [1413 kB]
+Fetched 1413 kB in 1s (1291 kB/s)
+(Reading database ... 88722 files and directories currently installed.)
+Preparing to unpack .../coreutils_9.4-3ubuntu6.1_amd64.deb ...
+Unpacking coreutils (9.4-3ubuntu6.1) over (9.4-3ubuntu6) ...
+Setting up coreutils (9.4-3ubuntu6.1) ...
+Processing triggers for install-info (7.1-3build2) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+fum@IVANCOM-FC4Q91U:~/infosec$ git clone https://github.com/aristocratos/btop.git
+Cloning into 'btop'...
+remote: Enumerating objects: 7062, done.
+remote: Counting objects: 100% (42/42), done.
+remote: Compressing objects: 100% (30/30), done.
+remote: Total 7062 (delta 23), reused 13 (delta 12), pack-reused 7020 (from 4)
+Receiving objects: 100% (7062/7062), 9.50 MiB | 6.46 MiB/s, done.
+Resolving deltas: 100% (4748/4748), done.
+fum@IVANCOM-FC4Q91U:~/infosec$ cd btop
+fum@IVANCOM-FC4Q91U:~/infosec/btop$ make -j"$(nproc)"
+
+ ██████╗ ████████╗ ██████╗ ██████╗
+ ██╔══██╗╚══██╔══╝██╔═══██╗██╔══██╗   ██╗    ██╗
+ ██████╔╝   ██║   ██║   ██║██████╔╝ ██████╗██████╗
+ ██╔══██╗   ██║   ██║   ██║██╔═══╝  ╚═██╔═╝╚═██╔═╝
+ ██████╔╝   ██║   ╚██████╔╝██║        ╚═╝    ╚═╝
+ ╚═════╝    ╚═╝    ╚═════╝ ╚═╝      Makefile v1.6
+PLATFORM     ?| Linux
+ARCH         ?| x86_64
+GPU_SUPPORT  :| true
+CXX          ?| g++ (13.3.0)
+CC           ?| cc (13.3.0)
+THREADS      :| 12
+REQFLAGS     !| -std=c++20
+WARNFLAGS    :| -Wall -Wextra -pedantic
+OPTFLAGS     :| -O2
+LDCXXFLAGS   :| -pthread -DFMT_HEADER_ONLY -D_GLIBCXX_ASSERTIONS -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_DEBUG -D_FILE_OFFSET_BITS=64 -fexceptions -fstack-clash-protection -fcf-protection -fstack-protector -DGPU_SUPPORT
+CXXFLAGS     +| $(REQFLAGS) $(LDCXXFLAGS) $(OPTFLAGS) $(WARNFLAGS)
+LDFLAGS      +| $(LDCXXFLAGS) $(OPTFLAGS) $(WARNFLAGS)
+
+Building btop++ (v1.4.5) Linux x86_64
+
+Command 'lowdown' not found: skipping generating man page btop.1
+Configuring obj/config.h
+Compiling src/linux/intel_gpu_top/intel_device_info.c
+Compiling src/linux/intel_gpu_top/igt_perf.c
+Compiling src/linux/intel_gpu_top/intel_name_lookup_shim.c
+Compiling src/linux/intel_gpu_top/intel_gpu_top.c
+Compiling src/btop.cpp
+Compiling src/btop_cli.cpp
+Compiling src/btop_config.cpp
+Compiling src/btop_draw.cpp
+Compiling src/btop_shared.cpp
+Compiling src/btop_input.cpp
+Compiling src/btop_menu.cpp
+Compiling src/btop_theme.cpp
+6%   -> obj/intel_device_info.c.o     (32KiB) (00s)
+19%  -> obj/igt_perf.c.o              (8.0KiB) (00s)
+19%  -> obj/intel_name_lookup_shim.c.o(8.0KiB) (00s)
+25%  -> obj/intel_gpu_top.c.o         (20KiB) (00s)
+Compiling src/btop_tools.cpp
+Compiling src/linux/btop_collect.cpp
+32%  -> obj/btop_cli.o                (248KiB) (06s)
+38%  -> obj/btop_theme.o              (416KiB) (08s)
+45%  -> obj/btop_input.o              (572KiB) (10s)
+51%  -> obj/btop_shared.o             (572KiB) (10s)
+57%  -> obj/btop_tools.o              (592KiB) (10s)
+64%  -> obj/btop_config.o             (652KiB) (11s)
+70%  -> obj/btop_menu.o               (688KiB) (12s)
+77%  -> obj/btop.o                    (776KiB) (13s)
+83%  -> obj/linux/btop_collect.o      (1.3MiB) (17s)
+90%  -> obj/btop_draw.o               (1.3MiB) (18s)
+
+Linking and optimizing binary...
+100% -> bin/btop                      (2.0MiB) (00s)
+
+Build complete in (20s)
+fum@IVANCOM-FC4Q91U:~/infosec/btop$ sudo make install
+Installing binary to: /usr/local/bin/btop
+Installing doc to: /usr/local/share/btop
+Installing themes to: /usr/local/share/btop/themes
+Installing desktop entry to: /usr/local/share/applications/btop.desktop
+Installing PNG icon to: /usr/local/share/icons/hicolor/48x48/apps/btop.png
+Installing SVG icon to: /usr/local/share/icons/hicolor/scalable/apps/btop.svg
+fum@IVANCOM-FC4Q91U:~/infosec/btop$ btop
+fum@IVANCOM-FC4Q91U:~/infosec/btop$ btop --version
+btop version: 1.4.5+184a59f
+Compiled with: g++ (13.3.0)
+Configured with: make STATIC= GPU_SUPPORT=true RSMI_STATIC=
+fum@IVANCOM-FC4Q91U:~/infosec/btop$ sudo make uninstall
+Removing: /usr/local/bin/btop
+removed '/usr/local/bin/btop'
+Removing: /usr/local/share/btop
+removed '/usr/local/share/btop/themes/gruvbox_dark_v2.theme'
+removed '/usr/local/share/btop/themes/flat-remix-light.theme'
+removed '/usr/local/share/btop/themes/solarized_dark.theme'
+removed '/usr/local/share/btop/themes/onedark.theme'
+removed '/usr/local/share/btop/themes/kyli0x.theme'
+removed '/usr/local/share/btop/themes/dusklight.theme'
+removed '/usr/local/share/btop/themes/night-owl.theme'
+removed '/usr/local/share/btop/themes/monokai.theme'
+removed '/usr/local/share/btop/themes/matcha-dark-sea.theme'
+removed '/usr/local/share/btop/themes/horizon.theme'
+removed '/usr/local/share/btop/themes/HotPurpleTrafficLight.theme'
+removed '/usr/local/share/btop/themes/dracula.theme'
+removed '/usr/local/share/btop/themes/kanagawa-lotus.theme'
+removed '/usr/local/share/btop/themes/phoenix-night.theme'
+removed '/usr/local/share/btop/themes/solarized_light.theme'
+removed '/usr/local/share/btop/themes/gruvbox_dark.theme'
+removed '/usr/local/share/btop/themes/adapta.theme'
+removed '/usr/local/share/btop/themes/elementarish.theme'
+removed '/usr/local/share/btop/themes/gruvbox_material_dark.theme'
+removed '/usr/local/share/btop/themes/everforest-dark-hard.theme'
+removed '/usr/local/share/btop/themes/paper.theme'
+removed '/usr/local/share/btop/themes/greyscale.theme'
+removed '/usr/local/share/btop/themes/whiteout.theme'
+removed '/usr/local/share/btop/themes/tokyo-night.theme'
+removed '/usr/local/share/btop/themes/adwaita.theme'
+removed '/usr/local/share/btop/themes/gruvbox_light.theme'
+removed '/usr/local/share/btop/themes/adwaita-dark.theme'
+removed '/usr/local/share/btop/themes/tomorrow-night.theme'
+removed '/usr/local/share/btop/themes/ayu.theme'
+removed '/usr/local/share/btop/themes/everforest-light-medium.theme'
+removed '/usr/local/share/btop/themes/tokyo-storm.theme'
+removed '/usr/local/share/btop/themes/flat-remix.theme'
+removed '/usr/local/share/btop/themes/nord.theme'
+removed '/usr/local/share/btop/themes/everforest-dark-medium.theme'
+removed '/usr/local/share/btop/themes/kanagawa-wave.theme'
+removed directory '/usr/local/share/btop/themes'
+removed '/usr/local/share/btop/README.md'
+removed directory '/usr/local/share/btop'
+Removing: /usr/local/share/applications/btop.desktop
+removed '/usr/local/share/applications/btop.desktop'
+Removing: /usr/local/share/icons/hicolor/48x48/apps/btop.png
+removed '/usr/local/share/icons/hicolor/48x48/apps/btop.png'
+Removing: /usr/local/share/icons/hicolor/scalable/apps/btop.svg
+removed '/usr/local/share/icons/hicolor/scalable/apps/btop.svg'
+Removing: /usr/local/share/man/man1/btop.1
+fum@IVANCOM-FC4Q91U:~/infosec/btop$
