@@ -1,0 +1,5 @@
+name:Alina
+surname:Akmatova
+dob:2001-02-14
+nickname:ali
+pet:rex

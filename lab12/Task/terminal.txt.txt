@@ -1,0 +1,7 @@
+fum@IVANCOM-FC4Q91U:~$ cd infosec/brute-force-server/
+fum@IVANCOM-FC4Q91U:~/infosec/brute-force-server$ nano gen_personal_wordlist.py
+fum@IVANCOM-FC4Q91U:~/infosec/brute-force-server$ nano victim.txt
+fum@IVANCOM-FC4Q91U:~/infosec/brute-force-server$ python3 gen_personal_wordlist.py victim.txt > personal_passwords.txt
+fum@IVANCOM-FC4Q91U:~/infosec/brute-force-server$ sort -u personal_passwords.txt -o personal_passwords.txt
+fum@IVANCOM-FC4Q91U:~/infosec/brute-force-server$ wc -l personal_passwords.txt
+2080 personal_passwords.txt
