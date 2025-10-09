@@ -1,0 +1,143 @@
+ANCOM-FC4Q91U:~$ touch file.txt
+fum@IVANCOM-FC4Q91U:~$ ls -la file.txt
+-rw-r--r-- 1 fum fum 30 Oct  9 10:09 file.txt
+fum@IVANCOM-FC4Q91U:~$ chmod 754 file.txt
+fum@IVANCOM-FC4Q91U:~$ ls -la
+total 2768
+drwxr-x--- 19 fum  fum     4096 Oct  8 18:07 .
+drwxr-xr-x 11 root root    4096 Oct  9 10:05 ..
+lrwxrwxrwx  1 fum  fum       22 Jun 30 01:39 .aws -> /mnt/c/Users/Ivan/.aws
+lrwxrwxrwx  1 fum  fum       24 Jun 30 01:39 .azure -> /mnt/c/Users/Ivan/.azure
+-rw-------  1 fum  fum   100682 Oct  9 10:06 .bash_history
+-rw-r--r--  1 fum  fum      220 Jun 11 15:08 .bash_logout
+-rw-r--r--  1 fum  fum     3792 Jun 24 15:57 .bashrc
+drwx------  5 fum  fum     4096 Oct  7 12:25 .cache
+drwxr-xr-x  4 fum  fum     4096 Sep  2 09:34 .cargo
+drwxr-xr-x  4 fum  fum     4096 Oct  7 12:17 .config
+drwxr-xr-x  2 fum  fum     4096 Aug 23 12:37 .cursor
+drwxr-xr-x  5 fum  fum     4096 Jun 24 15:45 .cursor-server
+drwx------  3 fum  fum     4096 Jul 13 13:41 .docker
+-rw-r--r--  1 fum  fum       48 Jun 24 15:40 .gitconfig
+drwxr-xr-x  2 fum  fum     4096 Sep  2 10:08 .landscape
+-rw-------  1 fum  fum       20 Sep  1 14:45 .lesshst
+drwxr-xr-x  4 fum  fum     4096 Oct  7 12:17 .local
+-rw-r--r--  1 fum  fum        0 Oct  9 10:05 .motd_shown
+-rw-r--r--  1 fum  fum      828 Jun 24 15:57 .profile
+drwxr-xr-x  7 fum  fum     4096 Jul 19 16:28 .redis-for-vscode
+drwxr-xr-x  6 fum  fum     4096 Jun 24 15:57 .rustup
+-rw-r--r--  1 fum  fum       66 Oct  7 11:32 .selected_editor
+drwx------  2 fum  fum     4096 Jun 24 15:43 .ssh
+-rw-r--r--  1 fum  fum        0 Sep  2 09:42 .sudo_as_admin_successful
+-rw-r--r--  1 fum  fum      165 Aug 31 14:20 .wget-hsts
+-rw-r--r--  1 fum  fum    52353 Oct  6 17:38 backup.sql
+-rwxr-xr-x  1 fum  fum      403 Sep  2 09:32 cout_word.sh
+-rwxr-xr-x  1 fum  fum      684 Sep  2 09:31 current_time.sh
+-rwxr-xr-x  1 fum  fum      215 Sep  2 09:33 delete_empty_files.sh
+-rw-r--r--  1 fum  fum  2361053 Oct  8 18:08 dump.dump
+-rw-r--r--  1 fum  fum     3543 Sep  2 10:06 fake_login.html
+-rwxr-xr--  1 fum  fum       30 Oct  9 10:09 file.txt
+-rw-r--r--  1 fum  fum     1440 Oct  6 17:52 full_cluster_backup.sql
+-rwxr-xr-x  1 fum  fum       37 Sep  2 09:19 greet.sh
+drwxr-xr-x  4 fum  fum     4096 Oct  7 12:24 infosec
+-rw-r--r--  1 fum  fum        0 Sep  2 10:08 login_data.txt
+-rw-r--r--  1 fum  fum     3444 Sep  2 10:42 mail.py
+-rw-r--r--  1 fum  fum        0 Oct  7 10:00 migration.dump
+-rw-r--r--  1 fum  fum    71176 Oct  7 12:29 passwords.txt
+-rw-r--r--  1 fum  fum       55 Oct  7 12:29 passwords.txt:Zone.Identifier
+drwxr-xr-x  2 fum  fum     4096 Oct  6 17:51 pg_backups
+drwxr-xr-x  2 fum  fum     4096 Oct  6 17:49 pg_dump
+drwxr-xr-x  2 fum  fum     4096 Sep  2 10:05 phishing
+drwxr-xr-x  4 fum  fum     4096 Sep  3 12:41 phishing-card
+drwxr-xr-x 11 fum  fum     4096 Aug 31 14:40 rspamd-telegram-bot
+-rw-r--r--  1 fum  fum     1009 Sep  2 10:07 server.py
+-rw-r--r--  1 fum  fum        0 Oct  6 10:41 students.csv
+-rwxr-xr-x  1 fum  fum      381 Sep  2 09:34 suid_scan.sh
+-rw-r--r--  1 fum  fum    75127 Oct  7 12:29 usernames.txt
+-rw-r--r--  1 fum  fum       55 Oct  7 12:29 usernames.txt:Zone.Identifier
+-rwxr-xr-x  1 fum  fum      360 Sep  2 09:35 world_writable.sh
+fum@IVANCOM-FC4Q91U:~$ sudo chown user1 file.txt
+[sudo] password for fum:
+fum@IVANCOM-FC4Q91U:~$ ls -la file.txt
+-rwxr-xr-- 1 user1 fum 30 Oct  9 10:09 file.txt
+fum@IVANCOM-FC4Q91U:~$ mkdir test_dir
+fum@IVANCOM-FC4Q91U:~$ cd test_dir
+fum@IVANCOM-FC4Q91U:~/test_dir$ touch file1.txt file2.txt file3.txt
+fum@IVANCOM-FC4Q91U:~/test_dir$ chmod 600 file1.txt
+fum@IVANCOM-FC4Q91U:~/test_dir$ ls -la
+total 8
+drwxr-xr-x  2 fum fum 4096 Oct  9 10:11 .
+drwxr-x--- 20 fum fum 4096 Oct  9 10:11 ..
+-rw-------  1 fum fum    0 Oct  9 10:11 file1.txt
+-rw-r--r--  1 fum fum    0 Oct  9 10:11 file2.txt
+-rw-r--r--  1 fum fum    0 Oct  9 10:11 file3.txt
+fum@IVANCOM-FC4Q91U:~/test_dir$ chmod 644 file2.txt
+fum@IVANCOM-FC4Q91U:~/test_dir$ chmod 755 file3.txt
+fum@IVANCOM-FC4Q91U:~/test_dir$ ls -la
+total 8
+drwxr-xr-x  2 fum fum 4096 Oct  9 10:11 .
+drwxr-x--- 20 fum fum 4096 Oct  9 10:11 ..
+-rw-------  1 fum fum    0 Oct  9 10:11 file1.txt
+-rw-r--r--  1 fum fum    0 Oct  9 10:11 file2.txt
+-rwxr-xr-x  1 fum fum    0 Oct  9 10:11 file3.txt
+fum@IVANCOM-FC4Q91U:~/test_dir$ sudo addgroup devteam
+info: Selecting GID from range 1000 to 59999 ...
+info: Adding group `devteam' (GID 1010) ...
+fum@IVANCOM-FC4Q91U:~/test_dir$ sudo adduser user3
+info: Adding user `user3' ...
+info: Selecting UID/GID from range 1000 to 59999 ...
+info: Adding new group `user3' (1011) ...
+info: Adding new user `user3' (1011) with group `user3 (1011)' ...
+info: Creating home directory `/home/user3' ...
+info: Copying files from `/etc/skel' ...
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for user3
+Enter the new value, or press ENTER for the default
+        Full Name []:
+        Room Number []:
+        Work Phone []:
+        Home Phone []:
+        Other []:
+Is the information correct? [Y/n]
+info: Adding new user `user3' to supplemental / extra groups `users' ...
+info: Adding user `user3' to group `users' ...
+fum@IVANCOM-FC4Q91U:~/test_dir$ sudo adduser user4
+info: Adding user `user4' ...
+info: Selecting UID/GID from range 1000 to 59999 ...
+info: Adding new group `user4' (1012) ...
+info: Adding new user `user4' (1012) with group `user4 (1012)' ...
+info: Creating home directory `/home/user4' ...
+info: Copying files from `/etc/skel' ...
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for user4
+Enter the new value, or press ENTER for the default
+        Full Name []:
+        Room Number []:
+        Work Phone []:
+        Home Phone []:
+        Other []:
+Is the information correct? [Y/n]
+info: Adding new user `user4' to supplemental / extra groups `users' ...
+info: Adding user `user4' to group `users' ...
+fum@IVANCOM-FC4Q91U:~/test_dir$ sudo usermod -aG devteam user2
+fum@IVANCOM-FC4Q91U:~/test_dir$ sudo usermod -aG devteam user3
+fum@IVANCOM-FC4Q91U:~/test_dir$ sudo usermod -aG devteam user4
+fum@IVANCOM-FC4Q91U:~/test_dir$ sudo chown user3:devteam /shared
+fum@IVANCOM-FC4Q91U:~/test_dir$ sudo chmod 770 /shared
+fum@IVANCOM-FC4Q91U:~/test_dir$ sudo ls -la /shared
+total 8
+drwxrwx---  2 user3 devteam      4096 Oct  9 10:00 .
+drwxr-xr-x 27 root  root         4096 Oct  9 10:00 ..
+-rw-r-----  1 user1 projectgroup    0 Oct  9 10:00 file1.txt
+fum@IVANCOM-FC4Q91U:~/test_dir$ sudo -u user3 touch /shared/test.txt
+fum@IVANCOM-FC4Q91U:~/test_dir$ sudo ls /shared
+file1.txt  test.txt
+fum@IVANCOM-FC4Q91U:~/test_dir$ sudo -u user2 touch /shared/test2.txt
+fum@IVANCOM-FC4Q91U:~/test_dir$ sudo ls /shared
+file1.txt  test.txt  test2.txt
+fum@IVANCOM-FC4Q91U:~/test_dir$ sudo -u user1 touch /shared/test3.txt
+touch: cannot touch '/shared/test3.txt': Permission denied
+fum@IVANCOM-FC4Q91U:~/test_dir$
