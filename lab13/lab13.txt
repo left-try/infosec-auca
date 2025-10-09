@@ -1,0 +1,71 @@
+fum@IVANCOM-FC4Q91U:~$ mkdir keylogger
+fum@IVANCOM-FC4Q91U:~$ cd keylogger/
+fum@IVANCOM-FC4Q91U:~/keylogger$ touch main.py
+fum@IVANCOM-FC4Q91U:~/keylogger$ sudo apt install python3-pynput
+[sudo] password for fum:
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libdrm-nouveau2 libdrm-radeon1 libgl1-amber-dri libglapi-mesa libllvm19 libxcb-dri2-0
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  python3-evdev python3-xlib
+Suggested packages:
+  python-evdev-doc python3-pynput-doc
+The following NEW packages will be installed:
+  python3-evdev python3-pynput python3-xlib
+0 upgraded, 3 newly installed, 0 to remove and 58 not upgraded.
+Need to get 219 kB of archives.
+After this operation, 1247 kB of additional disk space will be used.
+Do you want to continue? [Y/n]
+Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 python3-evdev amd64 1.7.0+dfsg-1build1 [41.7 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble/universe amd64 python3-xlib all 0.33-2 [120 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble/universe amd64 python3-pynput all 1.7.6-1 [56.9 kB]
+Fetched 219 kB in 1s (183 kB/s)
+Selecting previously unselected package python3-evdev.
+(Reading database ... 88927 files and directories currently installed.)
+Preparing to unpack .../python3-evdev_1.7.0+dfsg-1build1_amd64.deb ...
+Unpacking python3-evdev (1.7.0+dfsg-1build1) ...
+Selecting previously unselected package python3-xlib.
+Preparing to unpack .../python3-xlib_0.33-2_all.deb ...
+Unpacking python3-xlib (0.33-2) ...
+Selecting previously unselected package python3-pynput.
+Preparing to unpack .../python3-pynput_1.7.6-1_all.deb ...
+Unpacking python3-pynput (1.7.6-1) ...
+Setting up python3-xlib (0.33-2) ...
+Setting up python3-evdev (1.7.0+dfsg-1build1) ...
+Setting up python3-pynput (1.7.6-1) ...
+fum@IVANCOM-FC4Q91U:~/keylogger$ nano main.py
+fum@IVANCOM-FC4Q91U:~/keylogger$ python main.py
+Command 'python' not found, did you mean:
+  command 'python3' from deb python3
+  command 'python' from deb python-is-python3
+fum@IVANCOM-FC4Q91U:~/keylogger$ python3 main.py
+Start key logging...
+Traceback (most recent call last):
+  File "/home/fum/keylogger/main.py", line 85, in <module>
+    listener.join(timeout=30*60)  # Run for 30 minutes (60 sec * 30 min)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: AbstractListener.join() got an unexpected keyword argument 'timeout'
+fum@IVANCOM-FC4Q91U:~/keylogger$ nano main.py
+fum@IVANCOM-FC4Q91U:~/keylogger$ python3 main.py
+Start key logging...
+sa
+asd
+asd
+^CTraceback (most recent call last):
+  File "/home/fum/keylogger/main.py", line 85, in <module>
+    listener.join(10)  # Run for 30 minutes (60 sec * 30 min)
+    ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pynput/_util/__init__.py", line 273, in join
+    exc_type, exc_value, exc_traceback = self._queue.get()
+                                         ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/queue.py", line 171, in get
+    self.not_empty.wait()
+  File "/usr/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+KeyboardInterrupt
+
+fum@IVANCOM-FC4Q91U:~/keylogger$ ls
+main.py
